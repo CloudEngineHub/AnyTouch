@@ -10,7 +10,7 @@ import numpy as np
 
 class TAGDataset(Dataset):
     def __init__(self, args, mode='train'):
-        TAG_dir = 'tactile_datasets/TAG/touch_and_go/dataset/'
+        TAG_dir = 'tactile_datasets/TAG/dataset/'
 
         self.datalist = []
         self.labels = []
@@ -18,14 +18,14 @@ class TAGDataset(Dataset):
 
         if mode == 'train':
             if args.dataset == 'rough':
-                self.txt = 'tactile_datasets/TAG/touch_and_go/train_rough.txt'
+                self.txt = 'tactile_datasets/TAG/train_rough.txt'
             elif args.dataset == 'material' or args.dataset == 'hard':
-                self.txt = 'tactile_datasets/TAG/touch_and_go/train.txt'
+                self.txt = 'tactile_datasets/TAG/train.txt'
         else:
             if args.dataset == 'rough':
-                self.txt = 'tactile_datasets/TAG/touch_and_go/test_rough.txt'
+                self.txt = 'tactile_datasets/TAG/test_rough.txt'
             elif args.dataset == 'material' or args.dataset == 'hard':
-                self.txt = 'tactile_datasets/TAG/touch_and_go/test.txt'
+                self.txt = 'tactile_datasets/TAG/test.txt'
         
         for line in open(self.txt):
             item = line.split(',')[0]

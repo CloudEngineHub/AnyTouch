@@ -33,10 +33,6 @@ def parse_args():
     parser.add_argument("--cross_iter", type=int, default=6, help="")
     parser.add_argument("--cross_alpha", type=float, default=1.0, help="")
     parser.add_argument("--no_mae", action='store_true', help="")
-    parser.add_argument("--unitouch", action='store_true', help="")
-    parser.add_argument("--no_vision", action='store_true', help="")
-    parser.add_argument("--no_text", action='store_true', help="")
-    parser.add_argument("--full_data", action='store_true', help="")
 
     parser.add_argument('--weight_decay', type=float, default=0.05,
                         help='weight decay (default: 0.05)')

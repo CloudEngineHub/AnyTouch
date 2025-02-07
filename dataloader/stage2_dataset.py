@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 SSVTP_dir = 'tactile_datasets/TVL/tvl_dataset/ssvtp/'
-TAG_dir = 'tactile_datasets/TAG/touch_and_go/dataset/'
+TAG_dir = 'tactile_datasets/TAG/dataset/'
 obreal_dir = 'tactile_datasets/objectfolder/real/tactile/'
 visgel_dir = 'tactile_datasets/visgel/images/touch/'
 yuan18_dir = 'tactile_datasets/yuan18/Data_ICRA18/Data/'

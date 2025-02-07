@@ -4,14 +4,13 @@ CUDA_VISIBLE_DEVICES=2,3 python -u -m torch.distributed.launch --master_port=322
     --weight_decay 0.05 \
     --lr 1e-3 \
     --warmup_epochs 0 \
-    --output_dir /data/users/ruoxuan_feng/tactile_log/output_probe_feel_after_mae_align_video_all_kecheng_0.5_notest_epoch10_vt0.8 \
-    --log_dir /data/users/ruoxuan_feng/tactile_log/output_probe_feel_after_mae_align_video_all_kecheng_0.5_notest_epoch10_vt0.8 \
+    --output_dir log/output_probe_Feel \
+    --log_dir log/output_probe_Feel \
     --pooling cls \
     --dataset feel \
     --split 3 \
     --use_same_patchemb \
     --load_from_align \
-    --load_path log/output_stage2/checkpoint-9.pth \
+    --load_path log/checkpoint.pth \
     --use_sensor_token \
-    # --split 3
     

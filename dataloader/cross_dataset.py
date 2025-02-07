@@ -12,7 +12,7 @@ import numpy as np
 import random
 
 SSVTP_dir = 'tactile_datasets/SSVTP/ssvtp_data/images_tac/'
-TAG_dir = 'tactile_datasets/TAG/touch_and_go/dataset/'
+TAG_dir = 'tactile_datasets/TAG/dataset/'
 obreal_dir = 'tactile_datasets/objectfolder/real/tactile/'
 visgel_dir = 'tactile_datasets/visgel/images/touch/'
 yuan18_dir = 'tactile_datasets/yuan18/Data_ICRA18/Data/'
@@ -20,7 +20,7 @@ TVL_dir = 'tactile_datasets/TVL/tvl_dataset/hct/'
 ycb_dir = 'tactile_datasets/YCB-Slide/real/'
 octopi_dir = 'tactile_datasets/octopi/processed/'
 
-TAG_file = 'tactile_datasets/TAG/touch_and_go/label.txt'
+TAG_file = 'tactile_datasets/TAG/label.txt'
 obreal_file = 'tactile_datasets/objectfolder/real/contact_obj.csv'
 visgel_file = 'tactile_datasets/visgel/images/contact_visgel.csv'
 yuan18_file = 'tactile_datasets/yuan18/Data_ICRA18/contact_yuan.csv'

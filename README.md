@@ -1,11 +1,11 @@
 # AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors
 The official PyTorch implementation for "*AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors*", ICLR 2025
 
-**Authors: [Ruoxuan Feng](https://xxuan01.github.io/), Jiangyu Hu, [Wenke Xia](https://xwinks.github.io/), Tianci Gao, Ao Shen, [Yuhao Sun](https://scholar.google.com.hk/citations?user=ShKpk00AAAAJ), [Bin Fang](https://scholar.google.com/citations?hl=zh-CN&user=5G47IcIAAAAJ), [Di Hu](https://dtaoo.github.io/)**
+**Authors: [Ruoxuan Feng](https://xxuan01.github.io/), [Jiangyu Hu](https://syc-hjy.github.io/), [Wenke Xia](https://xwinks.github.io/), Tianci Gao, Ao Shen, [Yuhao Sun](https://scholar.google.com.hk/citations?user=ShKpk00AAAAJ), [Bin Fang](https://scholar.google.com/citations?hl=zh-CN&user=5G47IcIAAAAJ), [Di Hu](https://dtaoo.github.io/)**
 
 **Accepted by: International Conference on Learning Representations (ICLR 2025)**
 
-**Resources:[[Project Page]()],[[Arxiv]()],[[Checkpoints]()],[[Dataset]()]**
+**Resources:[[Project Page]()],[[ArXiv]()],[[Checkpoints]()],[[Dataset]()]**
 
 If you have any questions, please open an issue or send an email to [fengruoxuan@ruc.edu.cn](mailto:fengruoxuan@ruc.edu.cn).
 
@@ -44,9 +44,9 @@ The checkpoint for AnyTouch is provided below:
 
 |          |                        Training Data                         |     TAG (M/R/H)*      | Feel (Grasp) | OF 1.0 | OF 2.0 |              |
 | -------- | :----------------------------------------------------------: | :-------------------: | :----------: | :----: | :----: | :----------: |
-| AnyTouch | TAG, VisGel, Cloth, TVL, SSVTP,<br>YCB-Slide, OF Real, Octopi, TacQuad | 80.82 / 86.74 / 94.68 |    80.53     | 49.62  | 76.02  | [Download]() |
+| AnyTouch | TAG, VisGel, Cloth, TVL, SSVTP, YCB-Slide, OF Real, Octopi, TacQuad | 80.82 / 86.74 / 94.68 |    80.53     | 49.62  | 76.02  | [Download]() |
 
-*M: Material   R:Roughness   H:Hardness
+*M: Material   R: Roughness   H: Hardness
 
 ## Setup
 
@@ -60,17 +60,52 @@ conda create -n anytouch python=3.9
 conda activate anytouch
 conda install pytorch==2.1.0 torchvision==0.16.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 pip install -r requirements.txt
-
 ```
 
+## Linear Probing
 
+**0. Initialization**
 
-## Run
+AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main). To use our AnyTouch model, you need to download `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/config.json` first.
 
+Then, download the [checkpoint]() of AnyTouch to `log/checkpoint.pth`.
 
+**1. Data Preparation**
+
+Download and process [Touch and Go](https://github.com/fredfyyang/Touch-and-Go/tree/main/Visuo-tactile%20contrastive%20learning), [ObjectFolder 1.0](https://github.com/rhgao/ObjectFolder/tree/main/ObjectFolder1.0), [ObjectFolder 2.0](https://www.dropbox.com/scl/fo/ymd3693807jucdxj7cj1k/AFYNXRRpNFKRchRoUzA8x0M/DATA_new?dl=0&rlkey=hr1y85tzadepw7zb5wb9ebs0b&subfolder_nav_tracking=1) and [Feel](https://sites.google.com/view/the-feeling-of-success/) datasets to `tactile_datasets/`
+
+**2. Run Linear Probing**
+
+To evaluate the AnyTouch checkpoint through linear probing:
+
+```
+./run_probe_TAG.sh
+./run_probe_OF1.sh
+./run_probe_OF2.sh
+./run_probe_Feel.sh
+```
+
+## Train
+
+**0. Initialization**
+
+AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main). To use our AnyTouch model, you need to download `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/config.json` and `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/pytorch_model.bin` first.
+
+**1. Data Preparation**
 
 
 
 
 
 ## Citation
+
+```
+@inproceedings{feng2025learning,
+	title={Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors},
+	author={Ruoxuan Feng and Jiangyu Hu and Wenke Xia and Tianci Gao and Ao Shen and Yuhao Sun and Bin Fang and Di Hu},
+	booktitle={The Thirteenth International Conference on Learning Representations},
+	year={2025},
+	url={https://openreview.net/forum?id=XToAemis1h}
+}
+```
+

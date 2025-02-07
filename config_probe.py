@@ -35,8 +35,6 @@ def parse_args():
     parser.set_defaults(norm_pix_loss=False)
     parser.add_argument("--sensor_token_for_all", action='store_true', help="")
     parser.add_argument("--no_mae", action='store_true', help="")
-    parser.add_argument("--no_text", action='store_true', help="")
-    parser.add_argument("--no_vision", action='store_true', help="")
     parser.add_argument("--new_decoder_sensor_token", action='store_true', help="")
 
     parser.add_argument('--lr', type=float, default=None, metavar='LR',
