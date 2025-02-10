@@ -5,7 +5,7 @@ The official PyTorch implementation for "*AnyTouch: Learning Unified Static-Dyna
 
 **Accepted by: International Conference on Learning Representations (ICLR 2025)**
 
-**Resources:[[Project Page]()],[[ArXiv]()],[[Checkpoints]()],[[Dataset]()]**
+**Resources:[[Project Page]()],[[ArXiv (Coming Soon)]()],[[Checkpoints]()],[[Dataset (Coming Soon)]()]**
 
 If you have any questions, please open an issue or send an email to [fengruoxuan@ruc.edu.cn](mailto:fengruoxuan@ruc.edu.cn).
 
@@ -42,9 +42,9 @@ AnyTouch is a unified static-dynamic multi-sensor tactile representation learnin
 
 The checkpoint for AnyTouch is provided below:
 
-|          |                        Training Data                         |     TAG (M/R/H)*      | Feel (Grasp) | OF 1.0 | OF 2.0 |              |
-| -------- | :----------------------------------------------------------: | :-------------------: | :----------: | :----: | :----: | :----------: |
-| AnyTouch | TAG, VisGel, Cloth, TVL, SSVTP, YCB-Slide, OF Real, Octopi, TacQuad | 80.82 / 86.74 / 94.68 |    80.53     | 49.62  | 76.02  | [Download]() |
+|          |                        Training Data                         |     TAG (M/R/H)*      | Feel (Grasp) | OF 1.0 | OF 2.0 |                                                              |
+| -------- | :----------------------------------------------------------: | :-------------------: | :----------: | :----: | :----: | :----------------------------------------------------------: |
+| AnyTouch | TAG, VisGel, Cloth, TVL, SSVTP, YCB-Slide, OF Real, Octopi, TacQuad | 80.82 / 86.74 / 94.68 |    80.53     | 49.62  | 76.02  | [Download](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing) |
 
 *M: Material   R: Roughness   H: Hardness
 
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main). To use our AnyTouch model, you need to download `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/config.json` first.
 
-Then, download the [checkpoint]() of AnyTouch to `log/checkpoint.pth`.
+Then, download the [checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing) of AnyTouch to `log/checkpoint.pth`.
 
 **1. Data Preparation**
 
@@ -93,9 +93,21 @@ AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https:/
 
 **1. Data Preparation**
 
+Download and process [Touch and Go](https://github.com/fredfyyang/Touch-and-Go/tree/main/Visuo-tactile%20contrastive%20learning), [VisGel](https://github.com/YunzhuLi/VisGel), [Cloth](http://data.csail.mit.edu/active_clothing/Data_ICRA18.tar), [TVL](https://huggingface.co/datasets/mlfu7/Touch-Vision-Language-Dataset/tree/main), [SSVTP](https://drive.google.com/file/d/1H0B-jJ4l3tJu2zuqf-HbZy2bjEl-vL3f/view), [YCB-Slide](https://github.com/rpl-cmu/YCB-Slide), [ObjectFolder Real](https://objectfolder.stanford.edu/objectfolder-real-download), [Octopi](https://github.com/clear-nus/octopi) and [TacQuad]() datasets to `tactile_datasets/`. The TacQuad dataset and text prompt of other datasets can be downloaded [here]().
 
+**2. Train**
 
+To train AnyTouch model:
 
+```
+# First Stage (MAE)
+./train_stage1.sh
+
+# Second Stage (Align + Match)
+./train_stage2.sh
+```
+
+------
 
 ## Citation
 

@@ -1,4 +1,4 @@
-python -m torch.distributed.launch --master_port=22234 --nproc_per_node=4 main_video.py --distributed --accum_iter 1 \
+python -m torch.distributed.launch --master_port=22234 --nproc_per_node=4 main_stage1.py --distributed --accum_iter 1 \
     --batch_size 64 \
     --epochs 20 \
     --mask_ratio 0.75 \
