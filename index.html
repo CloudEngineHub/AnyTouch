@@ -120,7 +120,7 @@
                                 <a href="https://xxuan01.github.io/">Ruoxuan
                                     Feng</a><sup>1</sup>,</span>
                             <span class="author-block">
-                                Jiangyu Hu<sup>2,3</sup>,</span>
+                                <a href="https://syc-hjy.github.io/">Jiangyu Hu</a><sup>2,3</sup>,</span>
                             <span class="author-block">
                                 <a href="https://xwinks.github.io/">Wenke Xia</a><sup>1</sup>,</span>
                             <span class="author-block">
@@ -169,8 +169,7 @@
                                     </a>
                                 </span> -->
                                 <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2408.01366v2"
-                                        class="external-link button is-normal is-rounded is-dark">
+                                    <a href="" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="ai ai-arxiv"></i>
                                         </span>
@@ -189,8 +188,7 @@
                                 </span>
                                 <!-- Dataset Link. -->
                                 <span class="link-block">
-                                    <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                                        class="external-link button is-normal is-rounded is-dark">
+                                    <a href="" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fa fa-database main-icon"></i>
                                         </span>
@@ -198,7 +196,7 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="https://github.com/GeWu-Lab/AnyTouch"
+                                    <a href="https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fa fa-dice-d6"></i>
@@ -243,11 +241,44 @@
         </div>
     </section>
 
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="title is-3 has-text-centered">TacQuad: Aligned Multi-Modal Multi-Sensor Tactile Dataset</h2>
+                <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+              <source src="./static/images/method.pdf">
+            </video> -->
+                <!-- <embed src="./static/images/method.pdf" type="application/pdf"> -->
+                <img src='./static/images/dataset.png' width="100%" height="100%">
+                <br><br>
+                <div class="content has-text-justified">
+                    <p> TacQuad is an aligned multi-modal multi-sensor tactile dataset collected from 4 types of
+                        visuo-tactile sensors (GelSight Mini, DIGIT, DuraGel and Tac3D). It offers a more comprehensive
+                        solution to the low standardization of visuo-tactile sensors by providing multi-sensor aligned
+                        data with text and visual images. This explicitly enables models to learn semantic-level tactile
+                        attributes and sensor-agnostic features to form a unified multi-sensor representation space
+                        through data-driven approaches. This dataset includes two subsets of paired data with different
+                        levels of alignment:
+                    </p>
+                    <ul>
+                        <li><b>Fine-grained spatio-temporal aligned data:</b> This portion of the data was collected by
+                            pressing the same location of the same object at the same speed with the four sensors. It
+                            contains a total of 17,524 contact frames from 25 objects, which can be used for
+                            fine-grained tasks such as cross-sensor generation.</li>
+                        <li><b>Coarse-grained spatial aligned data:</b> This portion of the data was collected by hand,
+                            with the four sensors pressing the same location on the same object, although temporal
+                            alignment is not guaranteed. It contains 55,082 contact frames from 99 objects, including
+                            both indoor and outdoor scenes, which can be used for cross-sensor matching task. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <h2 class="title is-3 has-text-centered">Method</h2>
+                <h2 class="title is-3 has-text-centered">AnyTouch Model</h2>
                 <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
               <source src="./static/images/method.pdf">
             </video> -->
@@ -255,84 +286,31 @@
                 <img src='./static/images/model.png' width="100%" height="100%">
                 <br><br>
                 <div class="content has-text-justified">
-                    <p> To deal with the above challenge, we propose <b>MS-Bot</b>, a stage-guided dynamic multi-sensory
-                        fusion method with coarse-to-fine stage understanding.
-                        We first add a stage label \( s_t \) for each sample to form \( (\textbf{X}_t, a_t, s_t) \),
-                        where \( \textbf{X}_t \) is the multi-sensory observation at timestep \( t \) and \( a_t \) is
-                        the action label. We then train the MS-Bot, which consists of four components:
+                    <p> AnyTouch is a unified static-dynamic multi-sensor tactile representation learning framework
+                        which integrates the input format of tactile images and videos. It learns both fine-grained
+                        pixel-level details for refined tasks and semantic-level sensor-agnostic features for
+                        understanding properties and building unified space by a multi-level structure:
                     </p>
                     <ul>
-                        <li><b>Feature Extractor:</b> This component consists of several uni-modal encoders. Each
-                            encoder takes a brief history of observations \( X_t^m \in \mathbb{R}^{T\times H_m \times
-                            W_m
-                            \times C_m} \) of the modality \( m \) as input, where \( T \) is the timestep number of the
-                            brief
-                            history and \( H_m, W_m, C_m \) indicates the input shape of modality \( m \). These
-                            observations
-                            are then encoded into feature tokens \( \mathbf{f}_t \in \mathbb{R}^{M\times T \times d} \)
-                            where \( d \) denotes dimension.</li>
-                        <li><b>State Tokenizer:</b> This component aims to encode the observations and action history \(
-                            (a_1, a_2,...,a_{t-1}) \) into a token that can represent the current state. Action history
-                            is similar to human memory and can help to indicate the current state within the whole task.
-                            We input the action history as a one-hot sequence into an LSTM,
-                            then concatenate the output with the feature tokens and encode them into a state token
-                            \( z^{state}_t \) through a Multi-Layer Perceptron (MLP). </li>
-                        <li><b>Stage Comprehension Module:</b> This module aims to perform coarse-to-grained stage
-                            understanding by injecting stage information into the state token. For a task with $S$
-                            stages, we use \( S \) learnable stage tokens \( [stage_1],...,[stage_S] \) to represent
-                            each stage.
-                            We then use a gate network (MLP) to predict the current stage, then multiply the softmax
-                            score \( \mathbf{g}_t \) with the stage tokens and sum them up to obtain the stage token \(
-                            z^{stage}_t \) at
-                            timestep \( t \):
-                            $$
-                            \begin{equation}
-                            \begin{gathered}
-                            \mathbf{g}_t = (g^{1}_t,...,g^{S}_t) = softmax (MLP (z^{state}_t)),\\
-                            z^{stage}_t = \frac{1}{S} \sum_{j=1}^S(g^{j}_t \cdot [stage_j]).
-                            \end{gathered}
-                            \end{equation}
-                            $$
-                            Finally, we compute the weighted sum of the state token $z^{state}_t$ and the current stage
-                            token $z^{stage}_t$ using a weight $\beta$ to obtain the stage-injected state token
-                            $z^{*}_t$:
-                            \begin{equation}
-                            z^{*}_t = \beta \cdot z^{state}_t + (1-\beta) \cdot z_t^{stage}.
-                            \end{equation}
-                            Different from the old state token $z^{state}_t$, the new state token $z^{*}_t$ represents
-                            the fine-grained state within a stage. In this case, $z^{stage}_t$ is regarded as an anchor
-                            stage, while $z^{state}_t$ can indicate the shift inside the stage, thereby achieving
-                            coarse-to-fine stage comprehension.
-                            During the training process, we utilize stage labels to supervise the stage scores output by
-                            the gate net.
-                            We use a soft penalty loss $\mathcal{L}_{gate}$ to constrain the output of the gate net on
-                            the $i$-th sample:
-                            \begin{equation}
-                            \begin{gathered}
-                            \mathcal{L}_{gate,i} = \sum_{j=1}^S (w_i^j\cdot g_i^j), \ j \in \{ 1,2,...,S \}, \\
-                            w_i^j = \left \{
-                            \begin{array}{ll}
-                            0, & (s_i = j) \ or \ (\exists k,\ |k-i| \leq \gamma,\ s_i \ne s_k)
-                            , \\
-                            1, & otherwise,
-                            \end{array}
-                            \right. \\
-                            \end{gathered}
-                            \end{equation}
-                            where $k$ indicates a nearby sample in the same trajectory, $s_i$ and $s_k$ represent stage
-                            labels and $\gamma$ is a hyper-parameter used to determine the range near the stage
-                            boundaries.
-                        </li>
-                        <li>
-                            <b>Dynamic Fusion Module:</b> We aim for this module to dynamically select the modalities of
-                            interest based on the fine-grained state within the current stage. We use the state token
-                            with stage information $z^{*}_t$ as query, and the feature tokens $\mathbf{f}_t$ as key and
-                            value for cross-attention. The features from all modalities are integrated into a fusion
-                            token $z^{fus}_t$ based on the current stage's requirements. Finally, the fusion token
-                            $z^{fus}_t$ is fed into an MLP to predict the next action $a_t$. We also introduce random
-                            attention blur by replacing the attention scores on feature tokens with the same average
-                            value $\frac{1}{M\times T}$ with a probability $p$ to prevent the model from simply
-                            memorizing the actions corresponding to attention score patterns.
+                        <li><b>Masked Image/Video Modeling:</b> To enhance the fine-grained perception capabilities of
+                            the tactile representation model, we employ the masked autoencoder technique compelling the
+                            model to capture pixel-level details across multiple sensors. We randomly mask the tokens of
+                            both tactile images and videos, and build a decoder to obtain the reconstructed static
+                            images and dynamic videos. We also introduce an additional task of predicting the next frame
+                            while reconstructing the dynamic video.</li>
+                        <li><b>Multi-Modal Aligning:</b> We use multi-modal aligning to bind data from
+                            various sensors with paired modalities for a more comprehensive semantic-level perception
+                            and reduce perceptual differences between sensors. We select the text modality, which
+                            consistently describes tactile attributes across datasets, as an anchor to align touch,
+                            vision, and text modalities. The module is also compatible with missing modalities.</li>
+                        <li><b>Cross-Sensor Matching:</b> To fully utilize multi-sensor aligned data and build unified
+                            space by clustering multi-sensor tactile representations of the same object, we introduce a
+                            novel cross-sensor matching task. In this task, the model needs to determine whether two
+                            tactile images or videos are collected from the same position on the same object. We aim to
+                            cluster representations of the same tactile information from different sensors while
+                            performing multi-modal aligning,
+                            thereby enhancing the learning of sensor-agnostic features and forming a unified
+                            multi-sensor representation space.
                         </li>
                     </ul>
                 </div>
@@ -344,6 +322,7 @@
         <div class="container is-max-desktop">
             <div class="hero-body">
                 <h2 class="title is-3 has-text-centered">Experiments</h2>
+                <h2 class="title is-4">Sensor Transferability</h2>
                 <div class="content has-text-justified">
                     <p>We evaluate our method on two challenging robotic manipulation tasks: pouring and peg insertion
                         with keyway.
@@ -394,12 +373,12 @@
 
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@inproceedings{feng2024play,
-    title={Play to the Score: Stage-Guided Dynamic Multi-Sensory Fusion for Robotic Manipulation},
-    author={Feng, Ruoxuan and Hu, Di and Ma, Wenke and Li, Xuelong},
-    booktitle={8th Annual Conference on Robot Learning},
-    year={2024},
-    url={https://openreview.net/forum?id=N5IS6DzBmL}
+        <pre><code>@inproceedings{feng2025learning,
+    title={Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors},
+    author={Ruoxuan Feng and Jiangyu Hu and Wenke Xia and Tianci Gao and Ao Shen and Yuhao Sun and Bin Fang and Di Hu},
+    booktitle={The Thirteenth International Conference on Learning Representations},
+    year={2025},
+    url={https://openreview.net/forum?id=XToAemis1h}
 }</code></pre>
     </div>
 
