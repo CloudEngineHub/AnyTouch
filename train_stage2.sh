@@ -1,6 +1,6 @@
 python -m torch.distributed.launch --master_port=10234 --nproc_per_node=4 main_stage2.py --distributed --accum_iter 1 \
     --batch_size 64 \
-    --epochs 10 \
+    --epochs 12 \
     --mask_ratio 0.75 \
     --weight_decay 0.1 \
     --lr 2e-4 \
