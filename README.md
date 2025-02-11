@@ -5,7 +5,7 @@ The official PyTorch implementation for "*AnyTouch: Learning Unified Static-Dyna
 
 **Accepted by: International Conference on Learning Representations (ICLR 2025)**
 
-**Resources:[[Project Page]()],[[ArXiv (Coming Soon)]()],[[Checkpoints]()],[[Dataset (Coming Soon)]()]**
+**Resources:[[Project Page]()],[[ArXiv (Coming Soon)]()],[[Checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing)],[[Dataset (Coming Soon)](https://huggingface.co/datasets/xxuan01/TacQuad)]**
 
 If you have any questions, please open an issue or send an email to [fengruoxuan@ruc.edu.cn](mailto:fengruoxuan@ruc.edu.cn).
 
@@ -30,7 +30,7 @@ TacQuad is an aligned multi-modal multi-sensor tactile dataset collected from 4 
 - **Fine-grained spatio-temporal aligned data:** This portion of the data was collected by pressing the same location of the same object at the same speed with the four sensors. It contains a total of 17,524 contact frames from 25 objects, which can be used for fine-grained tasks such as cross-sensor generation.
 - **Coarse-grained spatial aligned data:** This portion of the data was collected by hand, with the four sensors pressing the same location on the same object, although temporal alignment is not guaranteed. It contains 55,082 contact frames from 99 objects, including both indoor and outdoor scenes, which can be used for cross-sensor matching task.
 
-We also use GPT-4o to generate or expand the text modality for several open-sourced tactile datasets. The TacQuad dataset and text prompt for other datasets are hosted on [HuggingFace](). 
+We also use GPT-4o to generate or expand the text modality for several open-sourced tactile datasets. The TacQuad dataset and text prompt for other datasets are hosted on [HuggingFace](https://huggingface.co/datasets/xxuan01/TacQuad). 
 
 ## AnyTouch Model
 
@@ -93,7 +93,7 @@ AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https:/
 
 **1. Data Preparation**
 
-Download and process [Touch and Go](https://github.com/fredfyyang/Touch-and-Go/tree/main/Visuo-tactile%20contrastive%20learning), [VisGel](https://github.com/YunzhuLi/VisGel), [Cloth](http://data.csail.mit.edu/active_clothing/Data_ICRA18.tar), [TVL](https://huggingface.co/datasets/mlfu7/Touch-Vision-Language-Dataset/tree/main), [SSVTP](https://drive.google.com/file/d/1H0B-jJ4l3tJu2zuqf-HbZy2bjEl-vL3f/view), [YCB-Slide](https://github.com/rpl-cmu/YCB-Slide), [ObjectFolder Real](https://objectfolder.stanford.edu/objectfolder-real-download), [Octopi](https://github.com/clear-nus/octopi) and [TacQuad]() datasets to `tactile_datasets/`. The TacQuad dataset and text prompt of other datasets can be downloaded [here]().
+Download and process [Touch and Go](https://github.com/fredfyyang/Touch-and-Go/tree/main/Visuo-tactile%20contrastive%20learning), [VisGel](https://github.com/YunzhuLi/VisGel), [Cloth](http://data.csail.mit.edu/active_clothing/Data_ICRA18.tar), [TVL](https://huggingface.co/datasets/mlfu7/Touch-Vision-Language-Dataset/tree/main), [SSVTP](https://drive.google.com/file/d/1H0B-jJ4l3tJu2zuqf-HbZy2bjEl-vL3f/view), [YCB-Slide](https://github.com/rpl-cmu/YCB-Slide), [ObjectFolder Real](https://objectfolder.stanford.edu/objectfolder-real-download), [Octopi](https://github.com/clear-nus/octopi) and [TacQuad](https://huggingface.co/datasets/xxuan01/TacQuad) datasets to `tactile_datasets/`. The TacQuad dataset and text prompt of other datasets can be downloaded [here](https://huggingface.co/datasets/xxuan01/TacQuad).
 
 **2. Train**
 
