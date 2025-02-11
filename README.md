@@ -5,7 +5,7 @@ The official PyTorch implementation for "*AnyTouch: Learning Unified Static-Dyna
 
 **Accepted by: International Conference on Learning Representations (ICLR 2025)**
 
-**Resources:[[Project Page]()],[[ArXiv (Coming Soon)]()],[[Checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing)],[[Dataset (Coming Soon)](https://huggingface.co/datasets/xxuan01/TacQuad)]**
+**Resources:[[Project Page](https://gewu-lab.github.io/AnyTouch/)],[[ArXiv (Coming Soon)]()],[[Checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing)],[[Dataset (Coming Soon)](https://huggingface.co/datasets/xxuan01/TacQuad)]**
 
 If you have any questions, please open an issue or send an email to [fengruoxuan@ruc.edu.cn](mailto:fengruoxuan@ruc.edu.cn).
 
@@ -17,7 +17,7 @@ If you have any questions, please open an issue or send an email to [fengruoxuan
 <img src="assest/intro.png" width = "90%" />
 </div>
 
-Tactile perception is crucial for humans to perceive the physical world. Over the years, various **visuo-tactile sensors** have been designed to endow robots with human-like tactile perception abilities. However, the **low standardization** of visuo-tactile sensors has hindered the development of a powerful tactile perception system. In this work, we present [**TacQuad**](), an **aligned multi-modal multi-sensor tactile dataset** that enables the explicit integration of sensors. Building on this foundation and other open-sourced tactile datasets, we propose learning unified representations from **both static and dynamic perspectives** to accommodate a range of tasks. We introduce **AnyTouch**, a **unified static-dynamic multi-sensor** tactile representation learning framework with a **multi-level** architecture, enabling comprehensive static and **real-world** dynamic tactile perception.
+Tactile perception is crucial for humans to perceive the physical world. Over the years, various **visuo-tactile sensors** have been designed to endow robots with human-like tactile perception abilities. However, the **low standardization** of visuo-tactile sensors has hindered the development of a powerful tactile perception system. In this work, we present [**TacQuad**](https://huggingface.co/datasets/xxuan01/TacQuad), an **aligned multi-modal multi-sensor tactile dataset** that enables the explicit integration of sensors. Building on this foundation and other open-sourced tactile datasets, we propose learning unified representations from **both static and dynamic perspectives** to accommodate a range of tasks. We introduce **AnyTouch**, a **unified static-dynamic multi-sensor** tactile representation learning framework with a **multi-level** architecture, enabling comprehensive static and **real-world** dynamic tactile perception.
 
 ## TacQuad Dataset
 
