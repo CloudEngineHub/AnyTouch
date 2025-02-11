@@ -323,53 +323,84 @@
             <div class="hero-body">
                 <h2 class="title is-3 has-text-centered">Experiments</h2>
                 <h2 class="title is-4">Sensor Transferability</h2>
+                <img src='./static/images/result1.png'
+                    style="margin-top: 5px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;"
+                    width="90%">
                 <div class="content has-text-justified">
-                    <p>We evaluate our method on two challenging robotic manipulation tasks: pouring and peg insertion
-                        with keyway.
-                        We compare our method with three baselines in both tasks:
+                    <p>we incorporate data from <span style="color: rgb(61, 127, 207);">GelSight</span>, <span
+                            style="color: rgb(222, 156, 8);">GelSlim</span>, <span
+                            style="color: rgb(0, 180, 26);">DIGIT</span> and <span
+                            style="color: rgb(151, 81, 203);">GelSight Mini</span> into
+                        the training of AnyTouch to obtain four different models, and compare them across four
+                        downstream tasks. We observe performance improvements across the three unseen datasets, with
+                        greater enhancements for unseen sensors than seen sensors. This suggests that the knowledge from
+                        the data of GelSlim, DIGIT, and GelSight Mini can transfer to the GelSight and other sensors.
                     </p>
-                    <ol>
-                        <li><b>Concat:</b> a model which directly
-                            concatenates all the uni-modal
-                            features. </li>
-                        <li><b>Du et al.:</b> a model that uses LSTM to fuse the uni-modal features and the additional
-                            proprioceptive information. </li>
-                        <li><b>MULSA:</b> a model which fuses the uni-modal features via self-attention. </li>
-                    </ol>
-                    <p>We also compare our method with two variants in each task:
-                    </p>
-                    <ol>
-                        <li><b>MS-Bot (w/o A/D):</b> removing audio in pouring and depth in peg insertion for MS-Bot.
-                        </li>
-                        <li><b>MS-Bot (w/o T/R):</b> removing touch in pouring and RGB in peg insertion for MS-Bot.
-                        </li>
-                    </ol>
 
                 </div>
                 <!-- <p>The results are shown in Table 1:</p> -->
-                <!-- <br></br> -->
                 <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
               <source src="./static/images/method.pdf">
             </video> -->
                 <!-- <embed src="./static/images/method.pdf" type="application/pdf"> -->
-                <img src='./static/images/result1.png' style="margin-top: 15px;">
-                <br><br>
                 <!-- <h2 class="subtitle has-text-justified">
                     $\dagger$ indicates MMCosine is applied. Combined with MMCosine, most of the fusion methods gain
                     considerable improvement for datasets of various scales, domains, and label amount.
                 </h2> -->
-                <h2 class="title is-4">Visualization</h2>
-                <img src='./static/images/result2.png'>
-                Visualization of the aggregated attention scores for each modality and stage scores in the pouring task.
-                At each timestep, we average the attention scores on all feature tokens of each modality separately. The
-                stage score is the output of the gate network after softmax normalization.
+                <h2 class="title is-4">Multi-Sensor Representation Space</h2>
+                <img src='./static/images/result2.png' style=" margin-bottom: 5px;">
+                <div class="content has-text-justified">
+                    <p>We extract one aligned contact frame from each sensor for the 30 touches in the unused
+                        fine-grained
+                        subset of TacQuad. We then use t-SNE to visualize the tactile representations. With our
+                        cross-sensor
+                        matching task, the representations from different sensors fully mix in a shared multi-sensor
+                        space,
+                        clearly clustering by the object's tactile information. This indicates that our model possesses
+                        the
+                        ability to extract sensor-agnostic features, enabling generalization to unseen sensors.
 
+                    </p>
+                </div>
 
+                <h2 class="title is-4">Static and Dynamic Perception</h2>
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered" style="display: flex; align-items: center; margin-bottom: 0px;">
+                        <div class="column">
+                            <img src='./static/images/result3.png'>
+                        </div>
 
+                        <div class="column">
+                            <img src='./static/images/result4.png'>
+                        </div>
+                    </div>
+                </div>
+                <div class="content has-text-justified">
+                    <p>To validate the benefit of unified multi-sensor representations in transferring knowledge from
+                        multiple sensor data to seen sensors and unseen sensors, we compare AnyTouch with existing
+                        multi-sensor models on two datasets from seen sensors and two datasets from unseen sensors. As
+                        shown in the tables, our AnyTouch model outperforms existing methods on all four datasets,
+                        demonstrating its static perception capabilities on both seen and unseen sensors.
 
+                    </p>
+                </div>
+
+                <img src='./static/images/result5.png'
+                    style="margin-top: 12px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;"
+                    width="85%">
+                <div class="content has-text-justified">
+                    <p>To test the dynamic perception capability of our method in real-world object manipulation tasks,
+                        we conduct experiments on a real-world task: fine-grained pouring. The robot arm must rely
+                        entirely on tactile feedback to pour out 60g of small beads from a cylinder that initially
+                        contains 100g of beads. We conduct 10 real-world test runs and record the mean error. The results
+                        demonstrate the importance of learning unified multi-sensor representations from both static
+                        and dynamic perspectives for completing various tasks including real-world tasks</p>
+                </div>
             </div>
         </div>
     </section>
+
+
 
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
