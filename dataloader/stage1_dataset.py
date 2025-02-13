@@ -59,8 +59,8 @@ class PretrainDataset_Contact(Dataset):
                 digit_start = int(row[3])
                 digit_end = int(row[4])
 
-                tirgel_start = int(row[5])
-                tirgel_end = int(row[6])
+                duragel_start = int(row[5])
+                duragel_end = int(row[6])
 
                 for t in range(gelsight_start, gelsight_end+1):
                     png_path = tacquad_indoor_dir + item_name +'/gelsight/' + str(t) +'.png'
@@ -72,8 +72,8 @@ class PretrainDataset_Contact(Dataset):
                     self.datalist.append(png_path)
                     self.sensor_type.append(1)
 
-                for t in range(tirgel_start, tirgel_end+1):
-                    png_path = tacquad_indoor_dir + item_name +'/tirgel/' + str(t) +'.png'
+                for t in range(duragel_start, duragel_end+1):
+                    png_path = tacquad_indoor_dir + item_name +'/duragel/' + str(t) +'.png'
                     self.datalist.append(png_path)
                     self.sensor_type.append(4)
 
@@ -88,8 +88,8 @@ class PretrainDataset_Contact(Dataset):
                 digit_start = int(row[3])
                 digit_end = int(row[4])
 
-                tirgel_start = int(row[5])
-                tirgel_end = int(row[6])
+                duragel_start = int(row[5])
+                duragel_end = int(row[6])
 
                 for t in range(gelsight_start, gelsight_end+1):
                     png_path = tacquad_outdoor_dir + item_name +'/gelsight/' + str(t) +'.png'
@@ -101,8 +101,8 @@ class PretrainDataset_Contact(Dataset):
                     self.datalist.append(png_path)
                     self.sensor_type.append(1)
 
-                for t in range(tirgel_start, tirgel_end+1):
-                    png_path = tacquad_outdoor_dir + item_name +'/tirgel/' + str(t) +'.png'
+                for t in range(duragel_start, duragel_end+1):
+                    png_path = tacquad_outdoor_dir + item_name +'/duragel/' + str(t) +'.png'
                     self.datalist.append(png_path)
                     self.sensor_type.append(4)
 
@@ -211,8 +211,8 @@ class PretrainDataset_Contact_video(Dataset):
                 digit_start = int(row[3])
                 digit_end = int(row[4])
 
-                tirgel_start = int(row[5])
-                tirgel_end = int(row[6])
+                duragel_start = int(row[5])
+                duragel_end = int(row[6])
 
                 for t in range(gelsight_start, gelsight_end+1):
                     if t<3:
@@ -234,13 +234,13 @@ class PretrainDataset_Contact_video(Dataset):
                     self.datalist.append([png_path_0, png_path_1, png_path_2, png_path_3])
                     self.sensor_type.append(1)
 
-                for t in range(tirgel_start, tirgel_end+1):
+                for t in range(duragel_start, duragel_end+1):
                     if t<3:
                         continue
-                    png_path_3 = tacquad_indoor_dir + item_name +'/tirgel/' + str(t) +'.png'
-                    png_path_2 = tacquad_indoor_dir + item_name +'/tirgel/' + str(t-1) +'.png'
-                    png_path_1 = tacquad_indoor_dir + item_name +'/tirgel/' + str(t-2) +'.png'
-                    png_path_0 = tacquad_indoor_dir + item_name +'/tirgel/' + str(t-3) +'.png'
+                    png_path_3 = tacquad_indoor_dir + item_name +'/duragel/' + str(t) +'.png'
+                    png_path_2 = tacquad_indoor_dir + item_name +'/duragel/' + str(t-1) +'.png'
+                    png_path_1 = tacquad_indoor_dir + item_name +'/duragel/' + str(t-2) +'.png'
+                    png_path_0 = tacquad_indoor_dir + item_name +'/duragel/' + str(t-3) +'.png'
                     self.datalist.append([png_path_0, png_path_1, png_path_2, png_path_3])
                     self.sensor_type.append(4)
 
@@ -255,8 +255,8 @@ class PretrainDataset_Contact_video(Dataset):
                 digit_start = int(row[3])
                 digit_end = int(row[4])
 
-                tirgel_start = int(row[5])
-                tirgel_end = int(row[6])
+                duragel_start = int(row[5])
+                duragel_end = int(row[6])
 
                 for t in range(gelsight_start, gelsight_end+1):
                     if t<3:
@@ -278,13 +278,13 @@ class PretrainDataset_Contact_video(Dataset):
                     self.datalist.append([png_path_0, png_path_1, png_path_2, png_path_3])
                     self.sensor_type.append(1)
 
-                for t in range(tirgel_start, tirgel_end+1):
+                for t in range(duragel_start, duragel_end+1):
                     if t<3:
                         continue
-                    png_path_3 = tacquad_outdoor_dir + item_name +'/tirgel/' + str(t) +'.png'
-                    png_path_2 = tacquad_outdoor_dir + item_name +'/tirgel/' + str(t-1) +'.png'
-                    png_path_1 = tacquad_outdoor_dir + item_name +'/tirgel/' + str(t-2) +'.png'
-                    png_path_0 = tacquad_outdoor_dir + item_name +'/tirgel/' + str(t-3) +'.png'
+                    png_path_3 = tacquad_outdoor_dir + item_name +'/duragel/' + str(t) +'.png'
+                    png_path_2 = tacquad_outdoor_dir + item_name +'/duragel/' + str(t-1) +'.png'
+                    png_path_1 = tacquad_outdoor_dir + item_name +'/duragel/' + str(t-2) +'.png'
+                    png_path_0 = tacquad_outdoor_dir + item_name +'/duragel/' + str(t-3) +'.png'
                     self.datalist.append([png_path_0, png_path_1, png_path_2, png_path_3])
                     self.sensor_type.append(4)
 
