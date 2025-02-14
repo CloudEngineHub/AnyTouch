@@ -33,8 +33,8 @@ obj2_dir = 'tactile_datasets/obj2.0/'
 tacquad_indoor_dir = 'tactile_datasets/tacquad/data_indoor/'
 tacquad_outdoor_dir = 'tactile_datasets/tacquad/data_outdoor/'
 
-tacquad_indoor_file = 'tactile_datasets/contact_tacquad_coarse.csv'
-tacquad_outdoor_file = 'tactile_datasets/contact_tacquad_out.csv'
+tacquad_indoor_file = 'tactile_datasets/tacquad/contact_indoor.csv'
+tacquad_outdoor_file = 'tactile_datasets/tacquad/contact_outdoor.csv'
 
 def custom_sort(a):
     int_a = int(a.split('.')[0])

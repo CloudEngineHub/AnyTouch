@@ -22,16 +22,16 @@ text_dir = 'tactile_datasets/text/'
 
 TAG_file = 'tactile_datasets/contact_text_tag_notest.csv'
 obreal_file = 'tactile_datasets/contact_text_obj.csv'
-visgel_file = 'tactile_datasets/visgel/images/contact_visgel.csv'
-yuan18_file = 'tactile_datasets/yuan18/Data_ICRA18/contact_yuan.csv'
+visgel_file = 'tactile_datasets/contact_visgel.csv'
+yuan18_file = 'tactile_datasets/contact_yuan.csv'
 octopi_file = 'tactile_datasets/contact_text_octopi.csv'
 TVL_file = 'tactile_datasets/contact_text_tvl.csv'
 
 tacquad_indoor_dir = 'tactile_datasets/tacquad/data_indoor/'
 tacquad_outdoor_dir = 'tactile_datasets/tacquad/data_outdoor/'
 
-tacquad_indoor_file = 'tactile_datasets/tacquad/contact_coarse.csv'
-tacquad_outdoor_file = 'tactile_datasets/tacquad/contact_out.csv'
+tacquad_indoor_file = 'tactile_datasets/tacquad/contact_indoor.csv'
+tacquad_outdoor_file = 'tactile_datasets/tacquad/contact_outdoor.csv'
 
 tacquad_text_dir = 'tactile_datasets/text_tacquad/'
 

@@ -5,7 +5,7 @@ The official PyTorch implementation for "*AnyTouch: Learning Unified Static-Dyna
 
 **Accepted by: International Conference on Learning Representations (ICLR 2025)**
 
-**Resources:[[Project Page](https://gewu-lab.github.io/AnyTouch/)],[[ArXiv (Coming Soon)]()],[[Checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing)],[[Dataset (Coming Soon)](https://huggingface.co/datasets/xxuan01/TacQuad)]**
+**Resources:[[Project Page](https://gewu-lab.github.io/AnyTouch/)],[[ArXiv (Coming Soon)]()],[[Checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing)],[[Dataset](https://huggingface.co/datasets/xxuan01/TacQuad)]**
 
 If you have any questions, please open an issue or send an email to [fengruoxuan@ruc.edu.cn](mailto:fengruoxuan@ruc.edu.cn).
 

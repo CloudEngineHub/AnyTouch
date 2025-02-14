@@ -20,16 +20,16 @@ ycb_dir = 'tactile_datasets/YCB-Slide/real/'
 octopi_dir = 'tactile_datasets/octopi/'
 
 TAG_file = 'tactile_datasets/TAG/label.txt'
-obreal_file = 'tactile_datasets/objectfolder/real/contact_obj.csv'
-visgel_file = 'tactile_datasets/visgel/images/contact_visgel.csv'
-yuan18_file = 'tactile_datasets/yuan18/Data_ICRA18/contact_yuan.csv'
-octopi_file = 'tactile_datasets/contact.csv'
+obreal_file = 'tactile_datasets/contact_obj.csv'
+visgel_file = 'tactile_datasets/contact_visgel.csv'
+yuan18_file = 'tactile_datasets/contact_yuan.csv'
+octopi_file = 'tactile_datasets/contact_octopi.csv'
 
 tacquad_indoor_dir = 'tactile_datasets/tacquad/data_indoor/'
 tacquad_outdoor_dir = 'tactile_datasets/tacquad/data_outdoor/'
 
-tacquad_indoor_file = 'tactile_datasets/tacquad/contact_coarse.csv'
-tacquad_outdoor_file = 'tactile_datasets/tacquad/contact_out.csv'
+tacquad_indoor_file = 'tactile_datasets/tacquad/contact_indoor.csv'
+tacquad_outdoor_file = 'tactile_datasets/tacquad/contact_outdoor.csv'
 
 
 def custom_sort(a):
