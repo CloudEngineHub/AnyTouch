@@ -109,20 +109,20 @@ class PretrainDataset_Contact(Dataset):
         with open(obreal_file,'r') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
-                self.datalist.append(row[0])
+                self.datalist.append(obreal_dir + row[0])
                 self.sensor_type.append(2)
 
 
         with open(visgel_file,'r') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
-                self.datalist.append(row[0])
+                self.datalist.append(visgel_dir + row[0])
                 self.sensor_type.append(0)
 
         with open(yuan18_file,'r') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
-                self.datalist.append(row[0])
+                self.datalist.append(yuan18_dir + row[0])
                 self.sensor_type.append(0)
         
         with open(octopi_file,'r') as file:
@@ -296,7 +296,7 @@ class PretrainDataset_Contact_video(Dataset):
                     image_0 = str(image_id - 3) +'.png'
                     image_1 = str(image_id - 2) +'.png'
                     image_2 = str(image_id - 1) +'.png'
-                    now_folder = row[0].split('gelsight/')[0] + 'gelsight/'
+                    now_folder = obreal_dir + row[0].split('gelsight/')[0] + 'gelsight/'
                     self.datalist.append([now_folder + image_0, now_folder + image_1, now_folder + image_2, row[0]])
                     self.sensor_type.append(2)
 
@@ -309,7 +309,7 @@ class PretrainDataset_Contact_video(Dataset):
                     image_0 = 'frame' + str(image_id - 3).zfill(4) +'.jpg'
                     image_1 = 'frame' + str(image_id - 2).zfill(4) +'.jpg'
                     image_2 = 'frame' + str(image_id - 1).zfill(4) +'.jpg'
-                    now_folder = row[0].split('/frame')[0] + '/'
+                    now_folder = visgel_dir + row[0].split('/frame')[0] + '/'
                     self.datalist.append([now_folder + image_0, now_folder + image_1, now_folder + image_2, row[0]])
                     self.sensor_type.append(0)
 
@@ -321,7 +321,7 @@ class PretrainDataset_Contact_video(Dataset):
                     image_0 = str(image_id - 3).zfill(4) +'.png'
                     image_1 = str(image_id - 2).zfill(4) +'.png'
                     image_2 = str(image_id - 1).zfill(4) +'.png'
-                    now_folder = row[0].split('gelsight_frame/')[0] + 'gelsight_frame/'
+                    now_folder = yuan18_dir + row[0].split('gelsight_frame/')[0] + 'gelsight_frame/'
                     self.datalist.append([now_folder + image_0, now_folder + image_1, now_folder + image_2, row[0]])
                     self.sensor_type.append(0)
 

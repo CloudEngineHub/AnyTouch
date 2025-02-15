@@ -94,8 +94,8 @@ class PretrainDataset_integrate(Dataset):
         with open(visgel_file,'r') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
-                self.datalist.append(row[0])
-                self.visionlist.append(row[0].replace('touch', 'vision'))
+                self.datalist.append(visgel_dir + row[0])
+                self.visionlist.append(visgel_dir.replace('touch', 'vision') + row[0])
                 self.sensor_type.append(0)
                 self.textlist.append(-1)
         
@@ -243,7 +243,7 @@ class PretrainDataset_integrate(Dataset):
             with open(yuan18_file,'r') as file:
                 csv_reader = csv.reader(file)
                 for row in csv_reader:
-                    self.datalist.append(row[0])
+                    self.datalist.append(yuan18_dir + row[0])
                     self.sensor_type.append(0)
                     self.visionlist.append(-1)
                     self.textlist.append(-1)
@@ -433,9 +433,9 @@ class PretrainDataset_video_integrate(Dataset):
                     image_0 = 'frame' + str(image_id - 3).zfill(4) +'.jpg'
                     image_1 = 'frame' + str(image_id - 2).zfill(4) +'.jpg'
                     image_2 = 'frame' + str(image_id - 1).zfill(4) +'.jpg'
-                    now_folder = row[0].split('/frame')[0] + '/'
+                    now_folder = visgel_dir + row[0].split('/frame')[0] + '/'
                     self.datalist.append([now_folder + image_0, now_folder + image_1, now_folder + image_2, row[0]])
-                    self.visionlist.append(row[0].replace('touch', 'vision'))
+                    self.visionlist.append(visgel_dir.replace('touch', 'vision') + row[0])
                     self.textlist.append(-1)
                     self.sensor_type.append(0)
         
@@ -604,7 +604,7 @@ class PretrainDataset_video_integrate(Dataset):
                         image_0 = str(image_id - 3).zfill(4) +'.png'
                         image_1 = str(image_id - 2).zfill(4) +'.png'
                         image_2 = str(image_id - 1).zfill(4) +'.png'
-                        now_folder = row[0].split('gelsight_frame/')[0] + 'gelsight_frame/'
+                        now_folder = yuan18_dir + row[0].split('gelsight_frame/')[0] + 'gelsight_frame/'
                         self.datalist.append([now_folder + image_0, now_folder + image_1, now_folder + image_2, row[0]])
                         self.sensor_type.append(0)
 

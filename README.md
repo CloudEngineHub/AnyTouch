@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 **0. Initialization**
 
-AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main). To use our AnyTouch model, you need to download `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/config.json` first.
+AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main).
 
 Then, download the [checkpoint](https://drive.google.com/file/d/1L4jGUjIHNBMzOiD33Rv0jxWYKHBORD1R/view?usp=sharing) of AnyTouch to `log/checkpoint.pth`.
 
@@ -89,7 +89,7 @@ To evaluate the AnyTouch checkpoint through linear probing:
 
 **0. Initialization**
 
-AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main). To use our AnyTouch model, you need to download `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/config.json` and `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/pytorch_model.bin` first.
+AnyTouch model is initialized from [CLIP-ViT-L-14-DataComp.XL-s13B-b90K](https://huggingface.co/laion/CLIP-ViT-L-14-DataComp.XL-s13B-b90K/tree/main). To use our AnyTouch model, you need to download `CLIP-ViT-L-14-DataComp.XL-s13B-b90K/pytorch_model.bin` first.
 
 **1. Data Preparation**
 
