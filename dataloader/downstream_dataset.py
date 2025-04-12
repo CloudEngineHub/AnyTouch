@@ -136,13 +136,14 @@ class OBJ2Dataset(Dataset):
 
 class OBJ1Dataset(Dataset):
     def __init__(self, args, mode='train'):
-        OBJ2_dir = 'tactile_datasets/obj1.0/'
+        OBJ1_dir = 'tactile_datasets/obj1.0/'
 
         self.datalist = []
         self.labels = []
         self.sensor_type = []
 
         self.mode = mode
+        # shared json file with OF2.0 dataset
         self.label_json_dir = 'tactile_datasets/obj2.0/label.json'
         self.split_json_dir = 'tactile_datasets/obj2.0/split.json'
         self.label_dict = {}
@@ -158,7 +159,7 @@ class OBJ1Dataset(Dataset):
                 if int(item_id) > 100:
                     continue
                 png_id = item[1]
-                self.datalist.append(OBJ2_dir + item_id +'/' + str(png_id) +'.png')
+                self.datalist.append(OBJ1_dir + item_id +'/' + str(png_id) +'.png')
                 self.labels.append(int(self.label_dict[item_id]))
                 self.sensor_type.append(-1)
         
