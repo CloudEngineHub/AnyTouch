@@ -112,12 +112,10 @@ To train AnyTouch model:
 ## Citation
 
 ```
-@inproceedings{feng2025learning,
-	title={Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors},
-	author={Ruoxuan Feng and Jiangyu Hu and Wenke Xia and Tianci Gao and Ao Shen and Yuhao Sun and Bin Fang and Di Hu},
-	booktitle={The Thirteenth International Conference on Learning Representations},
-	year={2025},
-	url={https://openreview.net/forum?id=XToAemis1h}
+@inproceedings{fenganytouch,
+  	title={AnyTouch: Learning Unified Static-Dynamic Representation across Multiple Visuo-tactile Sensors},
+  	author={Feng, Ruoxuan and Hu, Jiangyu and Xia, Wenke and Shen, Ao and Sun, Yuhao and Fang, Bin and Hu, Di and others},
+  	booktitle={The Thirteenth International Conference on Learning Representations}
 }
 ```
 
