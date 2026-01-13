@@ -152,6 +152,11 @@ def main(args):
 
     model = TactileProbe(args, config, 1, False, 1)
 
+    if args.resume:
+        load_dir = args.resume
+        ckpt = torch.load(load_dir, map_location='cpu')['model']
+        model.load_state_dict(ckpt, strict=True)
+        print(f"Resumed from {load_dir}")
     if args.load_from_clip:
         load_dir = 'CLIP-ViT-L-14-DataComp.XL-s13B-b90K/pytorch_model.bin'
         ckpt = torch.load(load_dir, map_location='cpu')
@@ -168,7 +173,7 @@ def main(args):
     # torch.save(model.state_dict(), 'ultratouch_encoder.pth')
     # exit(0)
     print(load_dir)
-    if not args.eval:
+    if not args.eval and not args.resume:
         model.init_head()
 
     model.to(device)
